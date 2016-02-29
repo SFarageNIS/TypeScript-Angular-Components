@@ -69,6 +69,17 @@ export class DateTimeController {
 
 	validator: __validation.IValidationHandler;
 
+	timeZone: string; //make enum
+
+	get dateTimeValue(): string{
+		this.timeZone = 'EST';
+		return this.ngModel.$viewValue;
+	}
+	set dateTimeValue(value: string) {
+		//
+		this.ngModel.$setViewValue(value);
+	}
+
 	ngModel: angular.INgModelController;
 	dateTimeValidator: IComponentValidator;
 
