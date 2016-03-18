@@ -25,6 +25,18 @@ var DateTimeController = (function () {
             unregister();
         });
     }
+    Object.defineProperty(DateTimeController.prototype, "dateTimeValue", {
+        get: function () {
+            this.timeZone = 'EST';
+            return this.ngModel.$viewValue;
+        },
+        set: function (value) {
+            //
+            this.ngModel.$setViewValue(value);
+        },
+        enumerable: true,
+        configurable: true
+    });
     DateTimeController.prototype.onClearClick = function () {
         this.ngModel.$setViewValue('');
         this.onClearEvent();
