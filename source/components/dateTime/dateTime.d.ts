@@ -34,6 +34,8 @@ export declare class DateTimeController {
     validFormat: boolean;
     format: string;
     validator: __validation.IValidationHandler;
+    timeZone: string;
+    dateTimeValue: string;
     ngModel: angular.INgModelController;
     dateTimeValidator: IComponentValidator;
     static $inject: string[];
